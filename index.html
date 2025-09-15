@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pantry → Plate</title>
+  <link rel="stylesheet" href="./assets/styles.css" />
+</head>
+<body>
+  <header class="container">
+    <h1>Pantry → Plate</h1>
+  </header>
+
+  <main class="container">
+    <!-- Pantry -->
+    <section>
+      <h2>Pantry</h2>
+      <form id="pantry-form">
+        <input id="item-name" placeholder="Name" required />
+        <input id="item-quantity" type="number" placeholder="Qty" required />
+        <select id="item-unit">
+          <option value="g">g</option><option value="kg">kg</option>
+          <option value="ml">ml</option><option value="l">l</option>
+          <option value="pcs">pcs</option>
+        </select>
+        <button>Add</button>
+        <button id="clear-all" type="button">Clear all</button>
+      </form>
+      <ul id="pantry-list"></ul>
+    </section>
+
+    <!-- Recipes -->
+    <section>
+      <h2>Recipes</h2>
+      <input id="search-input" placeholder="Search recipes… (e.g., pasta, chicken)" />
+      <div id="results"></div>
+    </section>
+
+    <!-- Planner -->
+    <section>
+      <h2>Planner</h2>
+      <div id="week" class="week"></div>
+    </section>
+  </main>
+
+  <script type="module" src="./src/app.js"></script>
+</body>
+</html>

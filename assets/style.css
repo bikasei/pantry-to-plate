@@ -1,0 +1,5 @@
+.week { display: grid; grid-template-columns: repeat(7, 1fr); gap: .75rem; }
+.day { border: 1px solid #e5e5e5; border-radius: .5rem; padding: .5rem; }
+.day h3 { margin: 0 0 .5rem; font-size: .95rem; }
+.day li { display: flex; justify-content: space-between; gap: .5rem; }
+
