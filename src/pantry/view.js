@@ -1,3 +1,4 @@
+// pantry/view.js
 import { $ } from '../utils/dom.js';
 
 const listEl = $('#pantry-list'); // one lookup at module load

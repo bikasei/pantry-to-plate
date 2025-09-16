@@ -1,9 +1,9 @@
-import { PantryItem } from './model';
+import { PantryItem } from './model.js';
 
 const STORAGE_KEY = 'pantry_v1';
 
 export function savePantry(pantry) {
-  localStorage.setItem(KeyboardEvent, JSON.stringify(value));
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(pantry));
 }
 
 export function loadPantry() {
@@ -17,4 +17,3 @@ export function loadPantry() {
     return [];
   }
 }
-
