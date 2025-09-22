@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&display=swap');
 
 :root {
-  --coral-pink: #FF6F61;
-  --powder-blue: #BEE3F8;
-  --mint-cream: #F0FFF4;
+  --coral-pink: #ff6f61;
+  --powder-blue: #bee3f8;
+  --mint-cream: #f0fff4;
   --soft-gray: #555;
-  --border-light: #E2E8F0;
-  --card-bg: #FFFFFF;
+  --border-light: #e2e8f0;
+  --card-bg: #ffffff;
   --shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
 }
 
@@ -30,7 +30,8 @@ body {
   padding: 1rem;
 }
 
-h1, h2 {
+h1,
+ƒ h2 {
   color: var(--coral-pink);
   margin-bottom: 1rem;
   text-align: center;
@@ -56,7 +57,8 @@ form {
   flex-wrap: wrap;
 }
 
-input, select {
+input,
+select {
   padding: 0.75rem;
   border: 1px solid var(--border-light);
   border-radius: 8px;
@@ -64,14 +66,20 @@ input, select {
   font-size: 1rem;
 }
 
-input:focus, select:focus {
+input:focus,
+select:focus {
   outline: none;
   border-color: var(--powder-blue);
   box-shadow: 0 0 0 3px rgba(190, 227, 248, 0.5);
 }
 
-#item-name, #search-input {
-  flex-grow: 1; /* Makes the name input take up available space */
+#item-name {
+  flex-grow: 1;
+}
+
+#search-input {
+  flex-grow: 1;
+  margin: 1.5rem auto;
 }
 
 button {
@@ -112,6 +120,9 @@ form button:hover {
 }
 
 #pantry-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding: 0.75rem;
   border-bottom: 1px solid var(--border-light);
 }
@@ -122,6 +133,21 @@ form button:hover {
 
 #pantry-list li:hover {
   background-color: #fafcff;
+}
+
+#pantry-list li .remove {
+  background: none;
+  border: none;
+  color: #fdc2c2;
+  font-size: 1.5rem;
+  font-weight: 700;
+  padding: 0 0.5rem;
+  cursor: pointer;
+  line-height: 1;
+}
+
+#pantry-list li .remove:hover {
+  color: var(--coral-pink);
 }
 
 /* --- Recipe Results --- */
@@ -164,7 +190,6 @@ form button:hover {
   background-color: #a9d8f5;
 }
 
-
 /* --- Planner Week View --- */
 #week {
   display: grid;
@@ -202,7 +227,7 @@ form button:hover {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
 }
 
 .day li .remove {
@@ -216,4 +241,78 @@ form button:hover {
 }
 .day li .remove:hover {
   color: var(--coral-pink);
+}
+
+/* --- Modal Styles --- */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  text-align: center;
+  width: 90%;
+  max-width: 400px;
+}
+
+.day-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  margin: 1.5rem 0;
+}
+
+.day-options button {
+  background-color: var(--powder-blue);
+  color: var(--soft-gray);
+}
+
+.close-button {
+  background-color: #f1f5f9;
+  color: var(--soft-gray);
+}
+
+@media (max-width: 768px) {
+  .container {
+    margin: 1rem auto;
+    padding: 0.5rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  section {
+    padding: 1rem;
+  }
+
+  #pantry-form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  #week {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .day {
+    min-height: 150px;
+  }
+
+  #results {
+    grid-template-columns: 1fr;
+  }
 }
